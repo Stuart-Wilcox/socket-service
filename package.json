@@ -1,0 +1,33 @@
+{
+  "name": "socket-service",
+  "version": "1.0.0",
+  "description": "socket-service",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stuart-Wilcox/socket-service.git"
+  },
+  "author": "stuart_wilcox@outlook.com",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Stuart-Wilcox/socket-service/issues"
+  },
+  "homepage": "https://github.com/Stuart-Wilcox/socket-service#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  }
+}
