@@ -5,6 +5,7 @@ import * as Express from 'express';
 export interface IWebServer {
     start: (cb?: ()=>void) => Promise<boolean>;
     stop: (cb?: ()=>void) => Promise<boolean>;
+    use: (requestHandler: Express.RequestHandler) => void;
 };
 
 export interface IWebServerOptions {
@@ -80,6 +81,10 @@ export default class WebServer implements IWebServer {
                 }
             });
         });
+    }
+
+    public use(requestHandler: Express.RequestHandler) {
+        this.app.use(requestHandler);
     }
 }
 
