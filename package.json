@@ -2,7 +2,7 @@
   "name": "socket-service",
   "version": "1.0.0",
   "description": "socket-service",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc"

@@ -9,12 +9,14 @@
             "ESNext",
             "ESNext.Array"
         ],
+        "outDir": "lib"
     },
     "include": [
         "src/**/*"
     ],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "**/*.spec.ts",
+        "src/example.ts"
     ]
 }
