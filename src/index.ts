@@ -1,11 +1,21 @@
 import * as BodyParser from 'body-parser';
 import SocketServer from './server/SocketServer';
-import Routes from './routes';
+import getRoutes, { IRouteOptions } from './routes';
 
-const server = new SocketServer({ port: 8000 });
+export interface ISocketServerOptions {
+    port: number;
+    routeOptions?: IRouteOptions;
+};
 
-server.use(BodyParser.urlencoded({ extended: false }))
-server.use(BodyParser.json())
-server.use(Routes);
+const createServer = ({
+    port,
+    routeOptions,
+}: ISocketServerOptions) => {
+    const server = new SocketServer({ port });
+    
+    server.use(BodyParser.urlencoded({ extended: false }))
+    server.use(BodyParser.json())
+    server.use(getRoutes(routeOptions));
+};
 
-server.start(() => console.log(`Server is listening on ${8000}`));
+export default createServer;

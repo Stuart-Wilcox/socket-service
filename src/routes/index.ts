@@ -2,20 +2,39 @@ import * as Express from 'express';
 import SocketEventManager from '../events';
 import { SocketEvent } from '../events';
 
-const router = Express.Router();
-const socketEventManager = SocketEventManager.getInstance();
+export interface IRouteOptions {
+    enableHealthCheck?: boolean;
+    postEventRoute?: string;
+};
 
-router.get('*', (req, res) => {
-    return res.send('Hello world');
-});
+const defaultRouteOptions: IRouteOptions = {
+    enableHealthCheck: true,
+    postEventRoute: '/event',
+};
 
-router.post('/event', (req, res) => {
-    const { watchType, payload } = req.body;
-
-    if (watchType && watchType as string) {
-        const socketEvent = new SocketEvent(watchType, payload);
-        socketEventManager.publish(socketEvent);
+const getRoutes = ({
+    enableHealthCheck,
+    postEventRoute,
+}: IRouteOptions = defaultRouteOptions) => {
+    const router = Express.Router();
+    const socketEventManager = SocketEventManager.getInstance();
+    
+    if (enableHealthCheck) {
+        router.get('*', (req, res) => {
+            return res.send('Hello world');
+        });
     }
-});
+    
+    router.post(postEventRoute, (req, res) => {
+        const { watchType, payload } = req.body;
+    
+        if (watchType && watchType as string) {
+            const socketEvent = new SocketEvent(watchType, payload);
+            socketEventManager.publish(socketEvent);
+        }
+    });
 
-export default router;
+    return router;
+};
+
+export default getRoutes;
