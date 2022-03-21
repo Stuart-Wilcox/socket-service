@@ -5,5 +5,6 @@ export interface ISocketServerOptions {
     routeOptions?: IRouteOptions;
 }
 export * from './types';
+export { default as SocketClient } from './client/Client';
 declare const createServer: ({ port, routeOptions, }: ISocketServerOptions) => SocketServer;
 export default createServer;

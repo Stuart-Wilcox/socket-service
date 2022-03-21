@@ -8,6 +8,8 @@ export interface ISocketServerOptions {
 };
 export * from './types';
 
+export { default as SocketClient } from './client/Client';
+
 const createServer = ({
     port,
     routeOptions,
