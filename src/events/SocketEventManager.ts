@@ -22,7 +22,7 @@ export class SocketEventManager<T extends ISocketEventClient> implements ISocket
 }
 
 
-type SocketEventCallback = (socketEvent: SocketEvent) => void;
+export type SocketEventCallback = (socketEvent: SocketEvent) => void;
 
 export interface ISocketEventClient {
     onMessage: (callback: SocketEventCallback) => void;

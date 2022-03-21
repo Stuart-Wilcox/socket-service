@@ -6,6 +6,7 @@ export interface ISocketServerOptions {
     port: number;
     routeOptions?: IRouteOptions;
 };
+export * from './types';
 
 const createServer = ({
     port,

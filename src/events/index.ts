@@ -1,11 +1,20 @@
-import { SocketEventManager, ISocketEventClient, InMemoryClient } from './SocketEventManager';
-import { SocketEvent } from './SocketEvent';
+import {
+    ISocketEventManager,
+    SocketEventManager,
+    ISocketEventClient,
+    InMemoryClient,
+    SocketEventCallback,
+} from './SocketEventManager';
+import { SocketEvent, SocketEventType } from './SocketEvent';
 
 export {
     SocketEvent,
+    SocketEventType,
     SocketEventManager,
+    ISocketEventManager,
     ISocketEventClient,
-    InMemoryClient, 
+    InMemoryClient,
+    SocketEventCallback,
 };
 
 class SocketEventManagerConf {

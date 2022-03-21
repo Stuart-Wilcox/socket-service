@@ -1,6 +1,6 @@
 import * as IO from 'socket.io';
 import * as uuid from 'uuid';
-import { SocketEvent, SocketEventType } from '../events/SocketEvent';
+import { SocketEvent } from '../events/SocketEvent';
 
 export class SocketClient {
     public id: string;

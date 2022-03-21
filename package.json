@@ -1,12 +1,13 @@
 {
-  "name": "socket-service",
-  "version": "1.0.0",
+  "name": "action-service",
+  "version": "1.0.1",
   "description": "socket-service",
   "main": "lib/index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc"
   },
+  "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Stuart-Wilcox/socket-service.git"
@@ -26,7 +27,7 @@
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",
     "tsc": "^1.20150623.0",
-    "typescript": "^3.7.5"
+    "typescript": "^4.6.2"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
