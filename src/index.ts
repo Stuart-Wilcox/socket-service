@@ -17,6 +17,8 @@ const createServer = ({
     server.use(BodyParser.urlencoded({ extended: false }))
     server.use(BodyParser.json())
     server.use(getRoutes(routeOptions));
+
+    return server;
 };
 
 export default createServer;
